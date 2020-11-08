@@ -5,21 +5,20 @@ from tkinter import filedialog
 
 def askforfile():
     file_path = filedialog.askopenfilename(title="Select a file")
-
+    return file_path
+    
 root =tk.Tk()
 root.withdraw()
 
 print("Select the file. (Have to be a .TXT)")
 
-askforfile()
+file_path = askforfile()
 
 # TXT Detection
 
-if file_path.endswith(".txt"): # Ends with .txt
-    
-else:
-    print("File might be a .TXT extension")
-    askforfile()
+while file_path.endswith(".txt") == False:
+    print("File might be a .txt extension")
+    file_path = askforfile()
 
 # End of TXT Detection
 
